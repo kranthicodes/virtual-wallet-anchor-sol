@@ -2,14 +2,14 @@
 seeds = false
 skip-lint = false
 [programs.localnet]
-virtual_wallet = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+virtual_wallet = "DVM4rzaJpyxCmKav7u2D87RyqYibaoWfFtUvMaQiz6Xm"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "Localnet"
-wallet = "/Users/dexter/.config/solana/id.json"
+cluster = "devnet"
+wallet = "/Users/dexter/.config/solana/devnet.json"
 
 [scripts]
 test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

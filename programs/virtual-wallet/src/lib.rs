@@ -1,12 +1,26 @@
 use anchor_lang::prelude::*;
 
-declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
+declare_id!("DVM4rzaJpyxCmKav7u2D87RyqYibaoWfFtUvMaQiz6Xm");
 
 #[program]
 pub mod virtual_wallet {
     use super::*;
 
     pub fn initialize_wallet(ctx: Context<InitializeWallet>) -> Result<()> {
+        ctx.accounts.cash.amount = 0;
+
+        ctx.accounts.credit_card.credit_limit = 5000;
+        ctx.accounts.credit_card.credit_used = 0;
+
+        ctx.accounts.debit_card.savings = 0;
+        ctx.accounts.debit_card.checking = 0;
+
+        msg!("Virtual wallet initialized!");
+        msg!(
+            "Credit card limit: {}",
+            ctx.accounts.credit_card.credit_limit
+        );
+
         Ok(())
     }
 }
